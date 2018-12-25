@@ -1,0 +1,5 @@
+# SantaBot Config
+# Email addresses, separated by commas on the next line:
+me@rdil.rocks,contactspaceboom@gmail.com
+# Subject:
+Merry Christmas :D
