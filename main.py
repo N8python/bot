@@ -37,8 +37,9 @@ g_mail_password = os.getenv(
 link = get_config_lines(
     12
 )
+people_to = get_config_lines(2).split(",")
 send_from = g_mail_username
-to = get_config_lines(2).split(",").len()
+to = len(people_to)
 subject = get_config_lines(4)
 body = get_config_lines(6) + link + get_config_lines(8)
 
