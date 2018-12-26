@@ -1,5 +1,7 @@
 import smtplib
 import os
+from typing import List
+
 couldGetArea4 = True
 try:
     import area4
@@ -39,14 +41,13 @@ link = get_config_lines(
 )
 people_to = get_config_lines(2).split(",")
 send_from = g_mail_username
-to = len(people_to)
 subject = get_config_lines(4)
 body = get_config_lines(6) + link + get_config_lines(8)
 
 
 def format_message() -> str:
     email_text = "\nFrom: {0}\nTo: {1}\nSubject: {2}\n%s".format(
-        send_from, ", ".join(to),
+        send_from, ", ".join(people_to),
         subject,
         body
     )
@@ -55,24 +56,24 @@ def format_message() -> str:
 
 def start():
     try:
-        if couldGetArea4:
-            print(area4.div15(), "\n" + get_config_lines(12) + "\n" + area4.div15())
-        server = smtplib.SMTP(
-            get_config_lines(10),
-            587
-        )
-        server.ehlo()
-        server.starttls()
-        server.login(
-            g_mail_username,
-            g_mail_password
-        )
-        server.sendmail(
-            send_from,
-            to,
-            format_message()
-        )
-        server.close()
+        for i in range(len(people_to)):
+            if couldGetArea4:
+                print(area4.div15(), "\n" + get_config_lines(12) + "\n" + area4.div15())
+            server = smtplib.SMTP(
+                get_config_lines(10),
+                587
+            )
+            server.starttls()
+            server.login(
+                g_mail_username,
+                g_mail_password
+            )
+            server.sendmail(
+                send_from,
+                people_to[i],
+                format_message()
+            )
+        server.quit()
     except:
         print(
             'Something went wrong.'
