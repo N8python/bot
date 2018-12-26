@@ -21,8 +21,7 @@ except ImportError:
 
 
 with open("config.txt") as cfg:
-    config = cfg.readlines()
-    configLines = config.splitlines()
+    configLines = cfg.readlines()
 
 
 def get_config_lines(given_id: int) -> str:
