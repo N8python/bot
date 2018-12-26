@@ -1,7 +1,8 @@
 import smtplib
 import os
 from typing import List
-
+print("Welcome to the Santa Bot")
+print("Please construct a config.txt file before using.")
 couldGetArea4 = True
 try:
     import area4
