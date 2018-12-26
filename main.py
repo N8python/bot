@@ -6,10 +6,10 @@ try:
 except ImportError:
     try:
         try:
-            os.system("pip install --upgrade --user area4==1.2.9")
+            os.system("pip install -r requirements.txt")
             import area4
         except:
-            os.system("python3 -m pip install --upgrade --user area4==1.2.9")
+            os.system("python3 -m pip install -r requirements.txt")
             import area4
     except:
         print("Failed to install area4.")
