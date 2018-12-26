@@ -1,3 +1,5 @@
+print("Before starting this bot, we recommend you install area4")
+print("This bot also requires a config.txt file, downloadable from github.com/SantaBot")
 import smtplib
 import os
 from typing import List
