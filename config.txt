@@ -11,3 +11,7 @@ Heya, \n<h1 style='text-align='center'>Merry Christmas!</h1>  Have a happy holid
 smtp.gmail.com
 # Banner:
 ! SantaBot !
+# Link:
+https://github.com/SantaBot/
+# G-mail address:
+itsthesantabot@gmail.com
