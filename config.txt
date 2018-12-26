@@ -3,3 +3,11 @@
 me@rdil.rocks,contactspaceboom@gmail.com
 # Subject:
 Merry Christmas :D
+# Raw HTML 1:
+Heya, \n<h1 style='text-align='center'>Merry Christmas!</h1>  Have a happy holidays/new year!  This message was sent to you by <a href='
+# Raw HTML 2:
+'>SantaBot!</a>
+# SMTP URL (DO NOT MODIFY):
+smtp.gmail.com
+# Banner:
+! SantaBot !
