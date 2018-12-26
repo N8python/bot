@@ -6,10 +6,14 @@ try:
 except ImportError:
     try:
         try:
-            os.system("pip install -r requirements.txt")
+            os.system(
+                "pip install -r requirements.txt"
+            )
             import area4
         except:
-            os.system("python3 -m pip install -r requirements.txt")
+            os.system(
+                "python3 -m pip install -r requirements.txt"
+            )
             import area4
     except:
         print("Failed to install area4.")
@@ -21,11 +25,10 @@ with open("config.txt") as cfg:
     configLines = config.splitlines()
 
 
-def get_config_lines(id: int) -> str:
-    return configLines[id]
+def get_config_lines(given_id: int) -> str:
+    return configLines[given_id]
 
 
-server = None
 g_mail_username = get_config_lines(
     14
 )
@@ -37,14 +40,8 @@ link = get_config_lines(
 )
 send_from = g_mail_username
 to = get_config_lines(2).split(",").len()
-subject = get_config_lines(
-    4
-)
-body = get_config_lines(
-    6
-) + link + get_config_lines(
-    8
-)
+subject = get_config_lines(4)
+body = get_config_lines(6) + link + get_config_lines(8)
 
 
 def format_message() -> str:
@@ -59,12 +56,7 @@ def format_message() -> str:
 def start():
     try:
         if couldGetArea4:
-            print(area4.div15(),
-                  "\n" + get_config_lines(
-                      12
-                  ) + "\n" +
-                  area4.div15()
-            )
+            print(area4.div15(), "\n" + get_config_lines(12) + "\n" + area4.div15())
         server = smtplib.SMTP(
             get_config_lines(10),
             587
@@ -82,7 +74,9 @@ def start():
         )
         server.close()
     except:
-        print('Something went wrong.')
+        print(
+            'Something went wrong.'
+        )
 
 
 start()
